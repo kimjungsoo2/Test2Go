@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Test2Go</string>
+    <string name="instruction">Please select the script to run!</string>
+    <string name="help">Test2Go will self-terminate after starting scripts with releasing resources to avoid skewed results.</string>
+    <string name="testing_start">Testing is started.</string>
+    <string name="testing_process">Testing is in progress.</string>
+    <string name="testing_end">Testing is completed.</string>
+    <string name="title_activity_file_browser">File Browser</string>
+    <string name="text_location">Current Location</string>
+    <string name="menu_item_title_browse">Browse</string>
+
+    <color name="lavenderblush4">#8B8386</color>
+    <color name="white">#FFFFFF</color>
+
+    <string name="icon">icon</string>
+    <string name="menu_play">Play</string>
+    <string name="menu_view">View</string>
+    <string name="text_fileView">File content is shown here. Very long string blah blah</string>
+
+    <color name="black">#000000</color>
+    <color name="xterm_green">#00FF00</color>
+    <color name="xterm_grey">#272822</color>
+    <color name="xterm_white">#eaeae4</color>
+
+    <string name="title_activity_file_view">File Viewer</string>
+    <string name="title_activity_file_view2">File Viewer</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="file_content_view_textview_text">First line goes here.</string>
+    <string name="title_activity_file_list_view">File Viewer</string>
+    <string name="title_activity_file_read">File Read</string>
+    <string name="title_activity_file_parse">FileParseActivity</string>
+    <string name="title_activity_file_web_view">File View</string>
+    <string name="menu_delete">Delete</string>
+    <string name="imageView_start_content">start script button</string>
+    <string name="menu_item_title_install">Install</string>
+    <string name="monitor_service_id">Test execution monitor service</string>
+    <string name="title_activity_preference">PreferenceActivity</string>
+    <string name="item_setting_title">Preferences</string>
+    <string name="pref_sender_email_message">Selects Sender\'s email account for test report</string>
+    <string name="pref_interval_time_message">Sets the frequency of checking the progress of test execution</string>
+    <string name="pref_sender_email_accounts_key">pref_sender_email_accounts_key</string>
+    <string name="pref_frequency_key">pref_frequency_key</string>
+    <string name="pref_recipient_email_address_key">pref_recipient_email_address_key</string>
+    <string name="pref_recipient_email_address_title">Recipient\'s Email Account</string>
+    <string name="pref_sender_email_accounts_title">Sender\'s Email Account</string>
+    <string name="pref_recipient_email_address_message">Add email addresses to receive the test report</string>
+    <string name="title_activity_setup_email_list">\@string/pref_recipient_email_addresses_title</string>
+    <string name="menu_item_add">Add</string>
+    <string name="menu_item_delete">Delete</string>
+    <string name="menu_item_select_all">Select All</string>
+    <string name="checked_text_view_text">user@email.com</string>
+    <string name="title">Welcome to Test2Go!</string>
+    <string name="menu_item_title_test">Test</string>
+
+</resources>

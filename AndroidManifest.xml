@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mot.test2go"
+    android:versionCode="7"
+    android:versionName="1.5" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.BROADCAST_SMS" />
+    <uses-permission android:name="android.permission.BROADCAST_WAP_PUSH" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/android_grn_128"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.mot.test2go.MainActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.mot.test2go.FileBrowseActivity"
+            android:label="@string/title_activity_file_browser"
+            android:configChanges="orientation|screenSize|screenLayout"
+            android:parentActivityName="com.mot.test2go.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mot.test2go.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.mot.test2go.FileViewActivity"
+            android:label="@string/title_activity_file_view"
+            android:parentActivityName="com.mot.test2go.FileBrowseActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mot.test2go.FileBrowserActivity" />
+        </activity>
+        <activity
+            android:name="com.mot.test2go.FileReadActivity"
+            android:label="@string/title_activity_file_read"
+            android:parentActivityName="com.mot.test2go.FileBrowseActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mot.test2go.FileBrowseActivity" />
+        </activity>
+        <activity
+            android:name="com.mot.test2go.FileWebViewActivity"
+            android:label="@string/title_activity_file_web_view"
+            android:configChanges="orientation|screenSize|screenLayout"
+            android:parentActivityName="com.mot.test2go.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mot.test2go.FileBrowseActivity" />
+        </activity>
+
+        <service android:name="com.mot.test2go.MonitorService" >
+        </service>
+        <activity android:name="com.mot.test2go.Preferences"
+                  android:parentActivityName="com.mot.test2go.MainActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.mot.test2go.MainActivity"/>
+        </activity>
+        <activity
+            android:name="com.mot.test2go.SetupEmailActivity"
+            android:label="@string/pref_recipient_email_address_title"
+            android:parentActivityName="com.mot.test2go.Preferences" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mot.test2go.Preferences" />
+        </activity>
+
+        <!-- Register BroadcastReceiver that listens for incoming SMS messages to start remote testing. -->
+        <receiver android:name="com.mot.test2go.SMSListener"
+                  android:permission="android.permission.BROADCAST_SMS">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_DELIVER"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- Register BroadcastReceiver that listens for incoming MMS messages to start remote testing. -->
+        <receiver android:name="com.mot.test2go.SMSListener"
+                  android:permission="android.permission.BROADCAST_WAP_PUSH">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.WAP_PUSH_DELIVER"/>
+                <data android:mimeType="application/vnd.wap.mms-message"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- Register BroadcastReceiver that listens for incoming SMS messages to start remote testing. -->
+        <receiver android:name="com.mot.test2go.SMSListener">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+                <!--<category android:name="android.intent.category.APP_MESSAGING" />-->
+            </intent-filter>
+        </receiver>
+
+        <!-- Register BroadcastReceiver to report device information to server. -->
+        <receiver android:name=".DeviceInformationReporter">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

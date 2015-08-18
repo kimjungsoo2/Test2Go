@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_status_check_frequency_entries">
+        <item>Every 10 sec</item>
+        <item>Every 30 sec</item>
+        <item>Every 60 sec</item>
+        <item>Every 5 min</item>
+        <item>Every 10 min</item>
+    </string-array>
+    <string-array name="pref_status_check_frequency_values">
+        <item>10000</item>
+        <item>30000</item>
+        <item>60000</item>
+        <item>300000</item>
+        <item>600000</item>
+    </string-array>
+    
+</resources>

@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+
+    <item android:id="@+id/menu_item_install" android:title="@string/menu_item_title_install"/>
+    <!-- TODO: Remove this menu. -->
+    <!--<item android:id="@+id/menu_item_test" android:title="@string/menu_item_title_test"/>-->
+    <item android:id="@+id/menu_item_browse" android:title="@string/menu_item_title_browse" android:showAsAction="always" android:icon="@drawable/action_search"/>
+    <item android:id="@+id/menu_item_setting" android:title="@string/item_setting_title"/>
+
+</menu>

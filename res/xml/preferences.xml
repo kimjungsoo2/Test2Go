@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <PreferenceCategory android:title="Preferences" android:key="preferences_category">
+        <ListPreference android:title="Interval Time - Progress Monitor" 
+            android:summary="@string/pref_interval_time_message" 
+            android:key="@string/pref_frequency_key" 
+            android:dialogTitle="Interval Time - Progress Monitor" 
+            android:dialogMessage="@string/pref_interval_time_message" 
+            android:entries="@array/pref_status_check_frequency_entries" 
+            android:entryValues="@array/pref_status_check_frequency_values" 
+            android:dialogLayout="@layout/pref_list_entries" android:defaultValue="60000"/>
+        <!-- <ListPreference 
+            android:summary="@string/pref_sender_email_message" 
+            android:key="@string/pref_sender_email_accounts_key" 
+            android:title="@string/pref_sender_email_accounts_title" android:dialogTitle="@string/pref_sender_email_accounts_title" 
+            android:dialogMessage="@string/pref_sender_email_message" android:dialogLayout="@layout/pref_list_entries"/>
+        -->
+        <Preference 
+            android:summary="@string/pref_recipient_email_address_message" 
+            android:key="@string/pref_recipient_email_address_key" 
+            android:title="@string/pref_recipient_email_address_title"/>
+    </PreferenceCategory>
+    
+
+</PreferenceScreen>
